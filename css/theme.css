@@ -1061,6 +1061,58 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
 .token-link:hover { color: var(--neon-hot); }
 
+/* How To Buy */
+.buy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.buy-step {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  clip-path: var(--clip-frame);
+  padding: 28px 24px;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.32);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.buy-step:hover {
+  transform: translate(-3px, -3px);
+  border-color: var(--neon);
+  box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 255, 0, 0.12);
+}
+
+.buy-num {
+  font-family: var(--font-display);
+  font-size: 42px;
+  line-height: 1;
+  color: var(--neon);
+  text-shadow: 0 0 20px var(--neon-glow);
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+
+.buy-step h3 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.buy-step p {
+  color: var(--cream-soft);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.buy-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
 /* Gallery */
 /* —— Meme marquee (3 infinite rows) —— */
 .section-memes {
@@ -1293,7 +1345,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   }
 
   .token-grid,
-  .token-grid-4 { grid-template-columns: 1fr 1fr; }
+  .token-grid-4,
+  .buy-grid { grid-template-columns: 1fr 1fr; }
 
   .meme-marquee { gap: 28px; }
 
@@ -1311,9 +1364,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
 @media (max-width: 560px) {
   .token-grid,
-  .token-grid-4 { grid-template-columns: 1fr; }
+  .token-grid-4,
+  .buy-grid { grid-template-columns: 1fr; }
 
-  .cta-row { flex-direction: column; align-items: stretch; }
+  .cta-row,
+  .buy-cta { flex-direction: column; align-items: stretch; }
   .btn { justify-content: center; }
 }
 
